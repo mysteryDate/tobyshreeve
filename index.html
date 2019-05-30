@@ -5,11 +5,30 @@
     <style media="screen">
       html, body {
         margin: 0;
+        height: 100%;
       }
     </style>
     <title></title>
   </head>
   <body>
-    <img src="big-toby.jpg" width="100%"></img>
+    <img src="big-toby.jpg" id="background-image"></img>
+    <script type="text/javascript">
+      window.onload = () => {
+        const bgImage = document.getElementById("background-image");
+        const bgAspectRatio = bgImage.width / bgImage.height;
+
+        window.onresize = (e) => {
+          const aspectRatio = window.innerWidth/window.innerHeight;
+          if (aspectRatio >= bgAspectRatio) {
+            bgImage.style.width = "100%";
+            bgImage.style.height = "";
+          } else {
+            bgImage.style.width = "";
+            bgImage.style.height = "100%";
+          }
+        }
+        window.onresize();
+      }
+    </script>
   </body>
 </html>
