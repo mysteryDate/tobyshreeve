@@ -8,35 +8,46 @@
         height: 100%;
         overflow: hidden;
       }
-      img {
+      body {
+        background-image: url("../big-toby.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      a {
+        font-family: courier;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 80pt;
+      }
+      a:hover {
+        color: blue;
+      }
+      div.link-container {
+        width: 100%;
+        margin: 10% -10%;
+        text-align: right;
+      }
+      div.vertical-center {
+        width: 100%;
+        margin: 0;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
       }
     </style>
-    <title>ths</title>
+    <title>THS</title>
   </head>
   <body>
-    <script type="text/javascript">
-      var bgImage = new Image();
-      bgImage.src = "big-toby.jpg";
-      bgImage.onload = () => {
-        const bgAspectRatio = bgImage.width / bgImage.height;
-
-        window.onresize = (e) => {
-          const aspectRatio = window.innerWidth/window.innerHeight;
-          if (aspectRatio >= bgAspectRatio) {
-            bgImage.style.width = "100%";
-            bgImage.style.height = "";
-          } else {
-            bgImage.style.width = "";
-            bgImage.style.height = "100%";
-          }
-        }
-        window.onresize();
-        document.body.appendChild(bgImage);
-      }
-    </script>
-    <a href="stories.html">STORIES</a>
+    <div class="vertical-center">
+      <div class="link-container">
+        <a href="stories.html">Stories</a>
+      </div>
+      <div class="link-container">
+        <a href="photos.html">Photos</a>
+      </div>
+    </div>
   </body>
 </html>
