@@ -33,12 +33,10 @@ def make_paragraph(num_sentences, sentence_length_range, word_length_range):
   return result
 
 def make_story(num_paragraphs, paragraph_length_range, sentence_length_range, word_length_range):
-  result = ''
+  paragraphs = []
   for i in range(num_paragraphs):
-    result += make_paragraph(rando(paragraph_length_range), sentence_length_range, word_length_range)
-    if i != num_paragraphs - 1:
-      result += '\n\t'
-  return result
+    paragraphs.append(make_paragraph(rando(paragraph_length_range), sentence_length_range, word_length_range))
+  return paragraphs
 
 # just hardcoding values here
 def make_entry():
