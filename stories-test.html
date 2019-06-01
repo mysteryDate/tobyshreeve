@@ -9,8 +9,33 @@
  </p>
 </body>
   <script type="text/javascript">
-    window.location = "https://docs.google.com/document/d/1Ss2S-NWKgdKQIb6QzUquYkaGYtzlDKqrdv1Bkuyj4z4/edit?usp=sharing";
-    var data = JSON.parse(document.getElementById("data").innerText);
-    console.log("hi");
+var data = JSON.parse(document.getElementById("data").innerText);
+
+function Entry(data) {
+  this.element = document.createElement('div');
+  this.element.classList.add("storyEntry");
+
+  this.title = document.createElement('h1');
+  this.title.innerText = data.title;
+  this.element.appendChild(this.title);
+
+  this.author = document.createElement('h2');
+  this.author.innerText = data.author;
+  this.element.appendChild(this.author);
+
+  this.date = document.createElement('h3');
+  this.date.innerText = data.date;
+  this.element.appendChild(this.date);
+
+  this.story = document.createElement('div');
+  this.story.innerText = data.story;
+  this.element.appendChild(this.story);
+}
+
+var storyEntries = [];
+for (let i = 0; i < data.length; i++) {
+  storyEntries.push(new Entry(data[i]));
+}
+
   </script>
 </html>
