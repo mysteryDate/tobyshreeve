@@ -52,3 +52,6 @@ def make_entry():
 data = []
 for i in range(10):
   data.append(make_entry())
+
+with open("output.json", "w") as outfile:
+  outfile.write(json.dumps(data))
