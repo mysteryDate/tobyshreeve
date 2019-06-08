@@ -32,11 +32,6 @@
         padding: 20px 0;
         text-align: right;
       }
-      div.portrait {
-        width: 100%;
-        margin: 10% -10%;
-        position: absolute;
-      }
       div.vertical-center {
         width: 100%;
         margin: 0 -10%;
@@ -49,7 +44,7 @@
     <title>THS</title>
   </head>
   <body>
-    <div id="all-links" class="portrait">
+    <div id="all-links" class="vertical-center">
       <div class="link-container">
         <a href="stories.html">Stories</a>
       </div>
@@ -57,19 +52,8 @@
         <a href="photos.html">Photos</a>
       </div>
       <div class="link-container">
-        <a href="book.html">Book</a>
-      </div>
-      <div class="link-container">
         <a href="donate.html">Donate</a>
       </div>
     </div>
-
   </body>
-  <script type="text/javascript">
-    if (window.innerHeight > window.innerWidth) {
-      var allLinks = document.getElementById("all-links");
-      allLinks.classList.remove("portrait");
-      allLinks.classList.add("vertical-center");
-    }
-  </script>
 </html>
